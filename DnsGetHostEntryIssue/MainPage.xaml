@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DnsGetHostEntryIssue.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label
+                Text="Test of regression of Dns.GetHostEntry()"
+                Style="{StaticResource SubHeadline}" />
+
+            <Label
+                Text="Entering a server address on the local network on Android, with mobile data turned on in Android, will on some routers genereate an exception. With mobile data turned off, it will find the server." />
+
+            <Label
+                Text="Server address or host name:" />
+
+            <Entry 
+                x:Name="ServerAddress" 
+                Text="192.168.1.101"/>
+
+            <Button
+                Text="Connect" 
+                Clicked="ConnectButtonClicked"
+                HorizontalOptions="Fill" />
+
+            <ScrollView>
+            <Label
+                x:Name="Result" 
+                />
+            </ScrollView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
